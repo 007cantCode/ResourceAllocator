@@ -91,7 +91,6 @@ def get_costs(instances, hours=0, cpus=0, price=0): #calculates the optimized nu
         # print("if")
 
         while cpus > 0:
-            print("inside")
             # print(count)
             selected_region, index_of_selected_region, selected_instance_type, selected_price, selected_vcpu = get_lowest_cpu_rate(cost_per_cpu, count)
             number_of_instance_taken = int(cpus / selected_vcpu) #finding number of cpus gained from selected low cost instance
@@ -114,5 +113,11 @@ def get_costs(instances, hours=0, cpus=0, price=0): #calculates the optimized nu
             cost_per_cpu, 0)
         final_price_single_cpu = selected_price*hours #cost of running selected instance for H hours
         no_of_affordable_cpu = int(price/final_price_single_cpu)
+         print("Number of servers are")
         print(selected_region, selected_instance_type, no_of_affordable_cpu)
+        print("...............................")
+
+
 get_costs(region, hours=10, price=38)
+get_costs(region, hours=24, cpus=135)
+print("...............................")
