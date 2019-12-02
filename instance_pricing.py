@@ -34,7 +34,7 @@ region = {
 }
 
 
-def get_costs_per_cpu(region):
+def get_costs_per_cpu(region): #the function gets costs per CPU
     y = []
     for x in region:
         for y in region[x]:
@@ -43,7 +43,7 @@ def get_costs_per_cpu(region):
     return (region)
 
 
-def get_lowest_cpu_rate(cost_per_cpu, index=0):
+def get_lowest_cpu_rate(cost_per_cpu, index=0): #finding the lowest rate instance type and its region 
     temp_dict = {}
     price = []
     instance_type = []
@@ -75,7 +75,7 @@ def get_lowest_cpu_rate(cost_per_cpu, index=0):
     return selected_region, index_of_selected_region, selected_instance_type, selected_price, selected_vcpu
 
 
-def get_costs(instances, hours=0, cpus=0, price=0):
+def get_costs(instances, hours=0, cpus=0, price=0): #calculates the optimized number of servers according to servers required or cost
 
     cost_per_cpu = get_costs_per_cpu(instances)
     count = 0
